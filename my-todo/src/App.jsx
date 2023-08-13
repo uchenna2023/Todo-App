@@ -4,6 +4,7 @@ import Form from './Form';
 import TodoList from './TodoList';
 import Buttons from './Buttons';
 import ListCount from './ListCount';
+import { ChakraProvider } from '@chakra-ui/react'
 
 const FILTER_MAP = {
   All: () => true,
@@ -94,7 +95,8 @@ const App = () => {
 
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <ChakraProvider>
+      <div className={darkMode ? 'dark' : ''}>
       <div className='bg-gray-300 dark:bg-gray-900'>
         <div className="h-64 bg-[url('./assets/logo2.png')] bg-no-repeat bg-cover w-full m-auto bg-transparent"></div>
         <div className="w-full h-64  backdrop-brigthness -mt-60"></div>
@@ -115,8 +117,7 @@ const App = () => {
         </div>
       </div>
     </div>
-
-
+    </ChakraProvider>
   )
 }
 
